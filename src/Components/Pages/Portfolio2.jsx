@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Mail, Download, ChevronRight, User, Code, Award, Book, MapPin, Link, ExternalLink, ArrowRight } from 'lucide-react';  
 
-import Virajith1 from './assets/Virajith1.png';  
+import Virajith1 from './src/assets/Virajith1.png';  
 
 const DevOpsPortfolio2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
