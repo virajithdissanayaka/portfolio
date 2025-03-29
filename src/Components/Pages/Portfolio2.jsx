@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Mail, Download, ChevronRight, User, Code, Award, Book, MapPin, Link, ExternalLink, ArrowRight } from 'lucide-react';  
 
+import Virajith1 from './assets/Virajith1.png';  
+
 const DevOpsPortfolio2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -425,7 +427,7 @@ const DevOpsPortfolio2 = () => {
                     <div className="absolute inset-0 animate-pulse rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-70 blur-xl"></div>
                     <div className="absolute inset-2 flex items-center justify-center overflow-hidden rounded-full border-4 border-blue-500 bg-gray-800/40 backdrop-blur-sm shadow-2xl shadow-blue-500/20">
                       <img 
-                        src="/portfolio/src/assets/Virajith1.png" 
+                        src={Virajith1} 
                         alt="Profile Picture" 
                         className="object-cover w-full h-full" 
                         draggable="false" 
