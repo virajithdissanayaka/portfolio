@@ -23,6 +23,7 @@ import Driveaze from '/src/assets/Driveaze.png';
 import akahubhome from '/src/assets/akahubhome.jpg';
 import AkaHub from '/src/assets/AkaHub.png';
 
+
 const DevOpsPortfolio2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -468,7 +469,7 @@ const DevOpsPortfolio2 = () => {
                     <div className="absolute inset-0 animate-pulse rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-70 blur-xl"></div>
                     <div className="absolute inset-2 flex items-center justify-center overflow-hidden rounded-full border-4 border-blue-500 bg-gray-800/40 backdrop-blur-sm shadow-2xl shadow-blue-500/20">
                       <img 
-                        src={Virajith1} 
+                        src="\src\assets\Virajith1.png" 
                         alt="Profile Picture" 
                         className="object-cover w-full h-full" 
                         draggable="false" 
