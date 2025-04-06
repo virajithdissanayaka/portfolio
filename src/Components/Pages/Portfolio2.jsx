@@ -1,6 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Mail, Download, ChevronRight, User, Code, Award, Book, MapPin, Link, ExternalLink, ArrowRight } from 'lucide-react';  
 
+
+import Virajith1 from '/src/assets/Virajith1.png'; 
+import Virajith_Dissanayaka from '/src/assets/Virajith_Dissanayaka.pdf'
+
+import Omobio from '/src/assets/omobio_pvt_ltd_logo.jpg';
+import RCC from '/src/assets/RCC.jpg';
+import UCSC from '/src/assets/ucsc.jpg';
+
+import GCP from '/src/assets/gcp-color.svg';
+import Jenkins from '/src/assets/file-type-jenkins.svg';
+import Ansible from '/src/assets/ansible.svg';
+import Terraform from '/src/assets/file-type-terraform.svg';
+import Mysql from '/src/assets/mysql-original-wordmark.svg';
+import Java from '/src/assets/java-original-wordmark.svg';
+import Python from '/src/assets/python.svg';
+
+import Cloud from '/src/assets/Cloud.jpg';
+import Driveaze2 from '/src/assets/Driveaze2.png';
+import Driveaze from '/src/assets/Driveaze.png';
+import akahubhome from '/src/assets/akahubhome.jpg';
+import AkaHub from '/src/assets/AkaHub.png';
+
 const DevOpsPortfolio2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -47,22 +69,22 @@ const DevOpsPortfolio2 = () => {
   // const technologies = [
   const technologies = [
     { name: "AWS", category: "Cloud", iconClass: "bx bxl-aws", color: "#FF9900" },
-    { name: "GCP", category: "Cloud", iconClass: "/src/assets/gcp-color.svg", color: "#4285F4" },
+    { name: "GCP", category: "Cloud", iconSrc: GCP, color: "#4285F4" },
     { name: "Docker", category: "DevOps", iconClass: "bx bxl-docker", color: "#2496ED" },
     { name: "Kubernetes", category: "DevOps", iconClass: "bx bxl-kubernetes", color: "#326CE5" },
-    { name: "Jenkins", category: "DevOps", iconClass: "/src/assets/file-type-jenkins.svg", color: "#D33833" },
+    { name: "Jenkins", category: "DevOps", iconSrc: Jenkins, color: "#D33833" },
     { name: "GitHub Actions", category: "DevOps", iconClass: "bx bxl-github", color: "#2088FF" },
-    { name: "Ansible", category: "DevOps", iconClass: "/src/assets/ansible.svg", color: "#EE0000" },
-    { name: "Terraform", category: "Infrastructure", iconClass: "/src/assets/file-type-terraform.svg", color: "#7B42BC" },
+    { name: "Ansible", category: "DevOps", iconSrc: Ansible, color: "#EE0000" },
+    { name: "Terraform", category: "Infrastructure", iconSrc: Terraform, color: "#7B42BC" },
     { name: "Spring Boot", category: "Backend", iconClass: "bx bxl-spring-boot", color: "#6DB33F" },
     { name: "React", category: "Frontend", iconClass: "bx bxl-react", color: "#61DAFB" },
     { name: "Node.js", category: "Backend", iconClass: "bx bxl-nodejs", color: "#339933" },
     { name: "MongoDB", category: "Database", iconClass: "bx bxl-mongodb", color: "#47A248" },
     { name: "PostgreSQL", category: "Database", iconClass: "bx bxl-postgresql", color: "#0064a5" },
-    { name: "MySQL", category: "Database", iconClass: "/src/assets/mysql-original-wordmark.svg", color: "#00758F" },
+    { name: "MySQL", category: "Database", iconSrc: Mysql, color: "#00758F" },
     { name: "Git", category: "DevOps", iconClass: "bx bxl-git", color: "#F05032" },
-    { name: "Java", category: "Language", iconClass: "/src/assets/java-original-wordmark.svg", color: "#EA2D2E" },
-    { name: "Python", category: "Language", iconClass: "/src/assets/python.svg", color: "#306998" },
+    { name: "Java", category: "Language", iconSrc: Java, color: "#EA2D2E" },
+    { name: "Python", category: "Language", iconSrc: Python, color: "#306998" },
     { name: "Bash Script", category: "Language", iconClass: "bx bx-terminal", color: "#4EAA25" }
   ];
 
@@ -73,7 +95,7 @@ const DevOpsPortfolio2 = () => {
       description: 'Automated migration of on-premise applications to AWS with zero downtime using Terraform and Ansible',
       technologies: ['AWS', 'Terraform', 'Ansible', 'Python'],
       link: '#',
-      uiImage: "/src/assets/Cloud.jpg",
+      uiImage: Cloud,
     },
     {
       title: 'Vehicle Service Station Management System',
@@ -82,8 +104,8 @@ const DevOpsPortfolio2 = () => {
       description: 'Comprehensive web and mobile system for vehicle service management, streamlining bookings, inventory, staff coordination, and customer interactions',
       technologies: ['React.js', 'Flutter', 'Spring Boot', 'PostgreSQL', 'AWS'],
       link: '#',
-      uiImage: "/src/assets/Driveaze2.png",
-      icon: "/src/assets/Driveaze.png"
+      uiImage: Driveaze2,
+      icon: Driveaze
     },
     // {
     //   title: 'Infrastructure as Code Platform',
@@ -99,8 +121,8 @@ const DevOpsPortfolio2 = () => {
       description: 'Comprehensive platform enhancing UCSC student experience with study material sharing, counselor connections, academic updates, anonymous voting, and event organization',
       technologies: ['PHP', 'jQuery', 'Python', 'MySQL', 'Apache', 'Nginx'],
       link: 'https://lnkd.in/gZYyvmsQ',
-      uiImage: "/src/assets/akahubhome.jpg",
-      icon: "/src/assets/AkaHub.png"
+      uiImage: akahubhome,
+      icon: AkaHub
     },
   ];
 
@@ -136,30 +158,30 @@ const DevOpsPortfolio2 = () => {
         institution: "Omobio (Pvt) Ltd",
         year: "2024 - Present",
         description: "Gained hands-on experience in server monitoring, Linux Bash scripting, AWS cloud services, Docker, Jenkins, and Kubernetes",
-        logo: "/src/assets/omobio_pvt_ltd_logo.jpg", 
+        logo: Omobio, 
       },
       {
         degree: "BSc in Computer Science",
         institution: "University of Colombo School of Computing",
         year: "2022 - 2025",
         description: "Studied Computer Networks, Operating Systems, System and Network Administration, Cloud Technologies, and Information System Security.",
-        logo: "/src/assets/ucsc.jpg"
+        logo: UCSC
       },      
       {
         degree: "GCE Advance Level",
         institution: "Rajapaksha Central Collage Weeraketiya",
         year: "2012 - 2020",
         description: "Studied in the Physical Science stream and achieved ABB in the first attempt: A in Chemistry, B in Combined Mathematics, and B in Physics.",
-        logo: "/src/assets/RCC.jpg", 
+        logo: RCC, 
       }
   ];
 
   const renderIcon = (tech) => {
-    // Check if the icon path starts with "/" which indicates it's an SVG file path
-    if (tech.iconClass.startsWith('/')) {
+    if (tech.iconSrc) {
+      // For imported SVG files
       return (
         <img 
-          src={tech.iconClass} 
+          src={tech.iconSrc} 
           alt={`${tech.name} icon`} 
           className="w-8 h-8" 
           draggable="false"
@@ -260,6 +282,13 @@ const DevOpsPortfolio2 = () => {
     }, 10);
   };
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative min-h-screen font-sans text-gray-100">
       {/* Global Background - Applied to entire page */}
@@ -278,7 +307,11 @@ const DevOpsPortfolio2 = () => {
             {navLinks.map(link => (
               <a
                 key={link.section}
-                href={`#${link.section}`}
+                href={`#${link.section}`} // Keep this for accessibility
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent default anchor behavior
+                  scrollToSection(link.section);
+                }}
                 className={`flex items-center space-x-1 text-sm transition-colors hover:text-blue-400 ${
                   activeSection === link.section ? 'text-blue-400' : 'text-gray-300'
                 }`}
@@ -306,10 +339,13 @@ const DevOpsPortfolio2 = () => {
                 <a
                   key={link.section}
                   href={`#${link.section}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.section); // Scrolls and closes menu
+                  }}
                   className={`block px-3 py-3 rounded-md flex items-center space-x-2 ${
                     activeSection === link.section ? 'bg-gray-700 text-blue-400' : 'text-gray-300 hover:bg-gray-700'
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {link.icon}
                   <span>{link.name}</span>
@@ -395,11 +431,18 @@ const DevOpsPortfolio2 = () => {
                 Building scalable, reliable, and secure systems that empower development teams.
               </p>
               <div className={`space-x-4 ${animatedItems.includes('hero-text') ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-                <a href="#projects" className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-colors">
+                <a
+                  href="#projects"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('projects');
+                  }}
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-colors"
+                >
                   View Projects
-                  <ChevronRight size={20} className="ml-1" />
+                  <i className="bx bx-chevron-right text-[20px] ml-1"></i> {/* Replaced ChevronRight with BoxIcon */}
                 </a>
-                <a href="/src/assets/Virajith_Dissanayaka.pdf" className="inline-flex items-center px-6 py-3 border border-gray-700 hover:border-blue-400 hover:text-blue-400 rounded-md font-medium transition-all">
+                <a href={Virajith_Dissanayaka} className="inline-flex items-center px-6 py-3 border border-gray-700 hover:border-blue-400 hover:text-blue-400 rounded-md font-medium transition-all">
                   <Download size={20} className="mr-2" />
                   Resume
                 </a>
@@ -425,7 +468,7 @@ const DevOpsPortfolio2 = () => {
                     <div className="absolute inset-0 animate-pulse rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-70 blur-xl"></div>
                     <div className="absolute inset-2 flex items-center justify-center overflow-hidden rounded-full border-4 border-blue-500 bg-gray-800/40 backdrop-blur-sm shadow-2xl shadow-blue-500/20">
                       <img 
-                        src="\src\assets\Virajith1.png" 
+                        src={Virajith1} 
                         alt="Profile Picture" 
                         className="object-cover w-full h-full" 
                         draggable="false" 
@@ -646,8 +689,8 @@ const DevOpsPortfolio2 = () => {
             
             
             <div className={`mt-20 text-center ${animatedItems.includes('projects-footer') ? 'animate-fade-in-up' : ''}`} id="projects-footer">
-            <a 
-                href="/projects" 
+              <a 
+                href="/#/projects" 
                 className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-full text-white font-medium hover:from-blue-500 hover:to-indigo-600 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group"
               >
                 View All Projects
