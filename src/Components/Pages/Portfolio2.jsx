@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Mail, Download, ChevronRight, User, Code, Award, Book, MapPin, Link, ExternalLink, ArrowRight } from 'lucide-react';  
-
+import ProjectCard from './ProjectCard';
 
 import Virajith1 from '/src/assets/Virajith1.png'; 
 import Virajith_Dissanayaka from '/src/assets/Virajith_Dissanayaka.pdf'
@@ -18,10 +18,15 @@ import Java from '/src/assets/java-original-wordmark.svg';
 import Python from '/src/assets/python.svg';
 
 import Cloud from '/src/assets/Cloud.jpg';
-import Driveaze2 from '/src/assets/Driveaze2.png';
-import Driveaze from '/src/assets/Driveaze.png';
-import akahubhome from '/src/assets/akahubhome.jpg';
-import AkaHub from '/src/assets/AkaHub.png';
+import Driveaze2 from '/src/assets/Driveaze/Driveaze2.png';
+import Driveaze from '/src/assets/Driveaze/Driveaze.png';
+import bill from '/src/assets/Driveaze/bill.png';
+import akahubhome from '/src/assets/AKAHUB/akahubhome.jpg';
+import AkaHub from '/src/assets/AKAHUB/AkaHub.png';
+import Res from '/src/assets/AKAHUB/Res.png';
+import CounselorDB from '/src/assets/AKAHUB/CounselorDB.png';
+import AkahubDB from '/src/assets/AKAHUB/AkahubDB.png';
+import chat from '/src/assets/AKAHUB/chat.png';
 
 
 const DevOpsPortfolio2 = () => {
@@ -37,13 +42,13 @@ const DevOpsPortfolio2 = () => {
     location: "Colombo, Sri Lanka",
     email: "dissanayakavirajith@icloud.com",
     github: "github.com/virajithdissanayaka",
-    linkedin: "linkedin.com/in/virajith-dissanayaka-739a49166/",
+    linkedin: "linkedin.com/in/virajith-dissanayaka/",
   };
 
   const socialMedia = [
     { 
       name: "LinkedIn", 
-      url: "https://www.linkedin.com/in/virajith-dissanayaka-739a49166/", 
+      url: "https://www.linkedin.com/in/virajith-dissanayaka/", 
       iconClass: "bx bxl-linkedin", 
       color: "#0A66C2" 
     },
@@ -91,40 +96,124 @@ const DevOpsPortfolio2 = () => {
 
   // Project data
   const projects = [
-    {
-      title: 'Cloud Migration Framework',
-      description: 'Automated migration of on-premise applications to AWS with zero downtime using Terraform and Ansible',
-      technologies: ['AWS', 'Terraform', 'Ansible', 'Python'],
-      link: '#',
-      uiImage: Cloud,
-    },
-    {
-      title: 'Vehicle Service Station Management System',
-      github: "https://github.com/orgs/Driveaze-3-rd-year-group-project/repositories",
-      demo: "samarasinghe-demo",
-      description: 'Comprehensive web and mobile system for vehicle service management, streamlining bookings, inventory, staff coordination, and customer interactions',
-      technologies: ['React.js', 'Flutter', 'Spring Boot', 'PostgreSQL', 'AWS'],
-      link: '#',
-      uiImage: Driveaze2,
-      icon: Driveaze
-    },
     // {
-    //   title: 'Infrastructure as Code Platform',
-    //   description: 'Developed reusable IaC modules for standardized infrastructure provisioning across multiple environments',
-    //   technologies: ['Terraform', 'AWS', 'Python', 'GitHub Actions'],
+    //   id: 1,
+    //   title: 'Cloud Migration Framework',
+    //   description: 'Automated migration of on-premise applications to AWS with zero downtime using Terraform and Ansible',
+    //   technologies: ['AWS', 'Terraform', 'Ansible', 'Python'],
     //   link: '#',
-    //   uiImage: "/src/assets/IAC.png",
+    //   uiImage: Cloud,
     // },
     {
-      title: 'ඇක Hub - Student Collaboration Platform',
-      github: "https://github.com/SaliyaBandara/aka-hub/",
-      // demo: "akahub-demo",
-      description: 'Comprehensive platform enhancing UCSC student experience with study material sharing, counselor connections, academic updates, anonymous voting, and event organization',
-      technologies: ['PHP', 'jQuery', 'Python', 'MySQL', 'Apache', 'Nginx'],
-      link: 'https://lnkd.in/gZYyvmsQ',
-      uiImage: akahubhome,
-      icon: AkaHub
+      id: 1,
+      title: "CI/CD Pipeline Deployment Project",
+      description: "Automated deployment pipeline for a Dockerized Python app using GitHub Actions and AWS ECS, ensuring efficient and reliable cloud delivery.",
+      longDescription: "This project focused on creating a CI/CD pipeline to automate the deployment of a containerized Python web application to Amazon ECS using GitHub Actions. The pipeline builds the Docker image, pushes it to AWS Elastic Container Registry (ECR), and deploys it to an ECS Fargate service behind an Application Load Balancer. This automation ensures consistent and quick deployments with zero downtime and simplified rollback capability.",
+      uiImage: Cloud, 
+      // icon: dockerIcon,
+      technologies: ["GitHub Actions", "Docker", "AWS ECR", "AWS ECS", "IAM", "ALB", "CI/CD"],
+      // github: "", 
+      // demo: "", 
+      lastUpdated: "April 2025",
+      developmentTime: "2 months",
+      features: [
+        "Automated build and push of Docker image to AWS ECR",
+        "Infrastructure configuration for ECS and IAM using best practices",
+        "Zero-downtime deployments using ECS rolling update strategy",
+        "GitHub Actions workflows triggered on push to main branch",
+        "Secure authentication and permissions setup via IAM roles",
+        "Load-balanced deployment using AWS Application Load Balancer",
+        "Rollback-ready deployments with container version control"
+      ],
+      // images: [
+      //   {
+      //     // src: cicdWorkflow, // Replace with actual image
+      //     alt: "GitHub Actions Workflow",
+      //     caption: "CI/CD Workflow using GitHub Actions"
+      //   },
+      //   {
+      //     // src: ecsDashboard, // Replace with actual image
+      //     alt: "ECS Service",
+      //     caption: "AWS ECS Fargate Deployment Dashboard"
+      //   }
+      // ]
     },
+    {
+      id: 2,
+      title: "Vehicle Service Station Management System",
+      description: "Comprehensive web and mobile system for vehicle service management, streamlining bookings, inventory, staff coordination, and customer interactions.",
+      longDescription: "The Vehicle Service Station Management System for Samarasinghe Motors Pvt Ltd is an integrated solution that transforms service station operations. This web and mobile application enables customers to schedule services, track repair progress, and provide feedback, while empowering administrators with efficient inventory tracking, staff coordination, and automated billing. The system also generates detailed reports for revenue and service performance analysis, reducing operational bottlenecks and elevating customer experience through streamlined workflows.",
+      uiImage: Driveaze2,
+      icon: Driveaze,
+      technologies: ["React.js", "Tailwind CSS", "Flutter", "Spring Boot", "PostgreSQL", "AWS", "JWT Authentication"],
+      github: "https://github.com/orgs/Driveaze-3-rd-year-group-project/repositories",
+      demo: "https://samarasinghe-motors-demo.netlify.app",
+      lastUpdated: "November 2024",
+      developmentTime: "6 months",
+      features: [
+        "Online service booking with automated reminders",
+        "Real-time vehicle repair progress tracking",
+        "Automated billing with online and in-person payment options",
+        "Inventory management for fast-moving items",
+        "Staff and job management for technicians and roles",
+        "Customer feedback and complaint handling system",
+        "Revenue and service trend report generation"
+      ],
+      images: [
+        {
+          src: Driveaze2,
+          alt: "Service Station Landing Page",
+          caption: "Service Station Management system Landing Page"
+        },
+        {
+          src: bill,
+          alt: "Bill View",
+          caption: "Bill View"
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: "ඇක Hub - Student Collaboration Platform",
+      description: "A centralized platform for UCSC students to share study materials, connect with counselors, receive academic updates, host elections, and promote club events.",
+      longDescription: "Developed as a second-year group project at the University of Colombo School of Computing, ඇක Hub is a comprehensive platform designed to enhance the student experience. Built from scratch without frameworks, it provides tools for sharing academic resources, hosting anonymous elections, managing counselor appointments, and promoting club events. The platform features automated notifications, timetable parsing, and an encrypted chat system, fostering seamless knowledge sharing and student support. With a Reddit-style post-sharing system and robust analytics, ඇක Hub empowers students and administrators to stay connected and organized. [Watch the project overview on YouTube](https://www.youtube.com/watch?v=EQJ6ZLTolbc)",
+      uiImage: akahubhome,
+      icon: AkaHub,
+      technologies: ["PHP", "HTML", "CSS", "JavaScript", "jQuery", "Python", "MySQL", "Apache", "Nginx"],
+      github: "https://github.com/SaliyaBandara/aka-hub/",
+      // demo: "https://ekhub-demo.netlify.app",
+      lastUpdated: "May 2024",
+      developmentTime: "12 months",
+      features: [
+        "Automated notifications and email system via Cron Jobs",
+        "Fully anonymous public voting system",
+        "Automatic timetable PDF parsing and calendar creation",
+        "Encrypted private chat system for counseling",
+        "Reddit-style post-sharing with threaded comments",
+        "Intuitive organization of study materials and course content",
+        "Simplified counselor appointment system",
+        "User logs management and analytics",
+        "User access control and account creation",
+        "Dedicated feed for counselors and club events"
+      ],
+      images: [
+        {
+          src: AkahubDB,
+          alt: "Aka Hub Dashboard",
+          caption: "Main dashboard with academic updates and event feeds"
+        },
+        {
+          src: CounselorDB,
+          alt: "Reservation Requests",
+          caption: "Counselor Reservation Requests"
+        },
+        {
+          src: chat,
+          alt: "Counseling Chat Interface",
+          caption: "Encrypted private chat for counselor appointments"
+        }
+      ]
+    }
   ];
 
   // Certifications data
@@ -154,24 +243,35 @@ const DevOpsPortfolio2 = () => {
 
   // Education data
   const education = [
-    {
+      {
+        degree: "Associate DevOps Engineer",
+        institution: "Omobio (Pvt) Ltd",
+        startDate: "Jun 2025",
+        endDate: "Present",
+        description: "Responsible for deploying applications, managing production servers, monitoring system performance, and automating tasks on critical RHEL live servers in the telecom domain.",
+        logo: Omobio,
+      },
+      {
         degree: "Trainee DevOps Engineer",
         institution: "Omobio (Pvt) Ltd",
-        year: "2024 - Present",
-        description: "Gained hands-on experience in server monitoring, Linux Bash scripting, AWS cloud services, Docker, Jenkins, and Kubernetes",
-        logo: Omobio, 
+        startDate: "Dec 2024",
+        endDate: "Jun 2025",
+        description: "Completed a 6-month internship focused on DevOps practices including server and application monitoring, Linux shell scripting, working with critical RHEL live servers in the telecom domain, and managing containerized environments using Podman and Docker.",
+        logo: Omobio,
       },
       {
         degree: "BSc in Computer Science",
         institution: "University of Colombo School of Computing",
-        year: "2022 - 2025",
-        description: "Studied Computer Networks, Operating Systems, System and Network Administration, Cloud Technologies, and Information System Security.",
+        startDate: "May 2022",
+        endDate: "May 2025",
+        description: "Completed Bachelor's degree in Computer Science with a solid foundation in Computer Networks, Operating Systems, Software Engineering, System and Network Administration, Cloud Technologies, and Information System Security.",
         logo: UCSC
       },      
       {
         degree: "GCE Advance Level",
         institution: "Rajapaksha Central Collage Weeraketiya",
-        year: "2012 - 2020",
+        startDate: "Jan 2012",
+        endDate: "Oct 2020",
         description: "Studied in the Physical Science stream and achieved ABB in the first attempt: A in Chemistry, B in Combined Mathematics, and B in Physics.",
         logo: RCC, 
       }
@@ -287,6 +387,26 @@ const DevOpsPortfolio2 = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const calculateDuration = (startDate, endDate) => {
+    const start = new Date(startDate);
+    const end = endDate ? new Date(endDate) : new Date();
+    
+    const diffTime = Math.abs(end - start);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const years = Math.floor(diffDays / 365);
+    const months = Math.floor((diffDays % 365) / 30);
+    
+    if (years > 0 && months > 0) {
+      return `${years} year${years > 1 ? 's' : ''} ${months} month${months > 1 ? 's' : ''}`;
+    } else if (years > 0) {
+      return `${years} year${years > 1 ? 's' : ''}`;
+    } else if (months > 0) {
+      return `${months} month${months > 1 ? 's' : ''}`;
+    } else {
+      return 'Less than a month';
     }
   };
 
@@ -431,20 +551,23 @@ const DevOpsPortfolio2 = () => {
                 Specializing in automation, CI/CD pipelines, and cloud infrastructure. 
                 Building scalable, reliable, and secure systems that empower development teams.
               </p>
-              <div className={`space-x-4 ${animatedItems.includes('hero-text') ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-                <a
+              <div className={`flex items-center space-x-4 ${animatedItems.includes('hero-text') ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
+                <a  
                   href="#projects"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection('projects');
                   }}
-                  className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-colors"
+                  className="inline-flex items-center px-6 py-3 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-colors"
                 >
                   View Projects
-                  <i className="bx bx-chevron-right text-[20px] ml-1"></i> {/* Replaced ChevronRight with BoxIcon */}
+                  <i className="bx bx-chevron-right text-xl ml-1 flex-shrink-0"></i>
                 </a>
-                <a href={Virajith_Dissanayaka} className="inline-flex items-center px-6 py-3 border border-gray-700 hover:border-blue-400 hover:text-blue-400 rounded-md font-medium transition-all">
-                  <Download size={20} className="mr-2" />
+                <a 
+                  href={Virajith_Dissanayaka} 
+                  className="inline-flex items-center px-6 py-3 h-12 border border-gray-700 hover:border-blue-400 hover:text-blue-400 rounded-md font-medium transition-all"
+                >
+                  <Download size={20} className="mr-2 flex-shrink-0" />
                   Resume
                 </a>
               </div>
@@ -487,13 +610,11 @@ const DevOpsPortfolio2 = () => {
         {/* Education Section */}
         <section id="experience" className="py-24">
           <div className="mb-16 animate-on-scroll" id="edu-header">
-            {/* <div className={`w-10 h-1 bg-blue-600 mr-4 ${animatedItems.includes('edu-header') ? 'animate-width' : 'w-0'}`}></div> */}
             <div className="flex items-center mb-4">
               <h2 className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600 ${animatedItems.includes('edu-header') ? 'animate-fade-in-right1' : 'opacity-0'}`}>
                 Education & Experience
               </h2>
             </div>
-           
           </div>
 
           {/* Reddit-style timeline with middle dotted line */}
@@ -503,7 +624,6 @@ const DevOpsPortfolio2 = () => {
               className="absolute left-1/2 top-0 w-0 border-dashed border-l-2 border-gray-600 -ml-px"
               style={{ 
                 height: education.length > 0 ? 'calc(100% - 100px)' : '0', 
-                // Line ends before the last item's bottom margin
               }}
             ></div>
 
@@ -530,14 +650,34 @@ const DevOpsPortfolio2 = () => {
                       >
                         <h3 className="text-xl font-bold mb-2">{edu.degree}</h3>
                         <p className="text-blue-400 mb-2">{edu.institution}</p>
-                        <p className="text-gray-400 text-sm mb-4">{edu.year}</p>
+                        
+                        {/* Enhanced date display with start and end dates */}
+                        <div className="mb-4">
+                          <div className={`flex items-center gap-2 text-gray-400 text-sm ${
+                            index % 2 === 0 ? 'md:justify-end' : 'justify-start'
+                          }`}>
+                            <span className="bg-gray-700 px-2 py-1 rounded-md">
+                              {edu.startDate}
+                            </span>
+                            <span className="text-gray-500">→</span>
+                            <span className="bg-gray-700 px-2 py-1 rounded-md">
+                              {edu.endDate || 'Present'}
+                            </span>
+                          </div>
+                          {/* Duration calculation */}
+                          <span className={`text-gray-500 text-xs mt-1 italic ${
+                            index % 2 === 0 ? 'md:text-right' : 'text-left'
+                          }`}>
+                            Duration: {calculateDuration(edu.startDate, edu.endDate)}
+                          </span>
+                        </div>
+                        
                         <p className="text-gray-300">{edu.description}</p>
                       </div>
                     </div>
 
                     {/* Logo in the opposite side */}
                     <div className={`w-full md:w-1/2 flex ${index % 2 === 0 ? 'md:pl-12 md:justify-start order-2 md:order-1' : 'md:pr-12 md:justify-end'}`}>
-                     
                       <div 
                         className={`w-24 h-24 rounded-full bg-gray-800 p-2 border border-gray-700 flex items-center justify-center overflow-hidden relative ${
                           animatedItems.includes(`edu-${index}`) ? 'animate-fade-in' : 'opacity-0'
@@ -553,8 +693,6 @@ const DevOpsPortfolio2 = () => {
                         />
                       </div>
                     </div>
-                  
-
                   </div>
                 </div>
               ))}
@@ -576,122 +714,19 @@ const DevOpsPortfolio2 = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
               {projects.map((project, index) => (
-                <div 
-                  key={index} 
-                  className={`group rounded-2xl overflow-hidden border border-gray-700/50 hover:border-blue-500 transition-all duration-500 animate-on-scroll backdrop-blur-sm bg-gray-800/80 shadow-xl hover:shadow-blue-900/20 hover:shadow-2xl hover:-translate-y-2`}
-                  id={`project-${index}`}
-                >
-                  <div 
-                    className={`h-56 bg-gradient-to-br from-blue-900 via-indigo-900 to-gray-900 relative ${
-                      animatedItems.includes(`project-${index}`) ? 'animate-fade-in' : 'opacity-0'
-                    }`} 
-                    style={{ animationDelay: `${0.1 * index}s` }}
-                  >
-                    {/* Project visual overlay */}
-                    <div className="absolute inset-0 bg-gray-900 opacity-40 group-hover:opacity-10 transition-opacity duration-500"></div>
-                    
-                   
-
-                    {/* Project icon or image placeholder */}
-                    <div className="absolute inset-0 flex items-center justify-center p-6 z-10 bg-gradient-to-b from-transparent via-transparent to-gray-900/80">
-                      {/* Background UI image with blur effect if available */}
-                      {project.uiImage && (
-                        <div className="absolute inset-0 overflow-hidden">
-                          <img 
-                            src={project.uiImage} 
-                            alt="" 
-                            className="w-full h-full object-cover opacity-40 blur-[2px]"
-                            aria-hidden="true"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/40 via-gray-900/60 to-gray-900/80"></div>
-                        </div>
-                      )}
-                      
-                      <div className="w-20 h-20 rounded-full bg-blue-600/20 backdrop-blur-sm flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-500 relative z-10">
-                        {project.icon ? (
-                          <img 
-                            src={project.icon} 
-                            alt={`${project.title} logo`} 
-                            className="w-20 h-20 object-contain rounded-full p-2"
-                          />
-                        ) : (
-                          <i class='bx bx-code-block text-[36px]'></i>
-                        )}
-                      </div>
-                    </div>
-                                        
-                    {/* Project title overlay with GitHub icon */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10 flex justify-between items-center">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
-                        {project.title}
-                      </h3>
-                      
-                      {project.github && (
-                        <a 
-                          href={project.github} 
-                          className="text-gray-400 hover:text-white p-3 bg-gray-800/60 rounded-full hover:bg-blue-900/60 transition-all duration-300 transform hover:scale-110"
-                          aria-label="View GitHub repository"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <svg className="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                          </svg>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  
-                  <div 
-                    className={`p-8 ${
-                      animatedItems.includes(`project-${index}`) ? 'animate-fade-in-up' : 'opacity-0'
-                    }`} 
-                    style={{ animationDelay: `${0.2 + 0.1 * index}s` }}
-                  >
-                    <p className="text-gray-300 mb-6 line-clamp-3">{project.description}</p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {project.technologies.map((tech, i) => (
-                        <span 
-                          key={i} 
-                          className="px-3 py-1 bg-gray-700/60 hover:bg-blue-800/40 rounded-full text-xs font-medium text-gray-300 hover:text-blue-200 transition-colors duration-300"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <a 
-                        href={project.link} 
-                        className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium group/link"
-                      >
-                        View Details
-                        <ChevronRight size={16} className="ml-1 transform group-hover/link:translate-x-1.5 transition-transform duration-300" />
-                      </a>
-                      
-                      {/* Live Demo Link if available */}
-                      {project.demo && (
-                        <a 
-                          href={project.demo} 
-                          className="inline-flex items-center text-gray-300 hover:text-blue-300 transition-colors duration-300 text-sm"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink size={14} className="mr-1" />
-                          Live Demo
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  index={index}
+                  animatedItems={animatedItems}
+                />
               ))}
             </div>
             
             
             <div className={`mt-20 text-center ${animatedItems.includes('projects-footer') ? 'animate-fade-in-up' : ''}`} id="projects-footer">
               <a 
-                href="/#/projects" 
+                //href="#/projects" 
                 className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-full text-white font-medium hover:from-blue-500 hover:to-indigo-600 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group"
               >
                 View All Projects
