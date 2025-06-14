@@ -297,7 +297,7 @@ const DevOpsPortfolio2 = () => {
   // Handle scroll and animations
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'projects', 'technologies', 'certifications', 'education'];
+      const sections = ['hero', 'projects', 'technologies', 'certifications', 'experience'];
       
       for (const section of sections) {
         const element = document.getElementById(section);
